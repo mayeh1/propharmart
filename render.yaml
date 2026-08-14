@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: propharmart
+    runtime: docker
+    plan: free
+    region: oregon
+    branch: main
+    envVars:
+      - key: APP_NAME
+        value: PROPHAMART
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        value: base64:PElIP8X+ld2F1WC/OVm8unFP30DL50ZyJbpR1xaoP88=
+      - key: APP_URL
+        value: https://propharmart.onrender.com
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: DB_CONNECTION
+        value: sqlite
+      - key: DB_DATABASE
+        value: /app/database/database.sqlite
+      - key: SESSION_DRIVER
+        value: database
+      - key: CACHE_STORE
+        value: database
+      - key: QUEUE_CONNECTION
+        value: sync
+      - key: MAIL_MAILER
+        value: log
+      - key: ADMIN_EMAIL
+        value: admin@propharmat.com
+      - key: ADMIN_PASSWORD
+        generateValue: true
