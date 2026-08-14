@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-2">
+                    <a href="{{ Auth::user()->is_admin ? route('admin.dashboard') : route('account') }}" class="flex items-center gap-2">
                         <span class="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#0b2d4d] via-[#184f7e] to-[#0b3551]">
                             <span class="flex h-5 w-5 items-center justify-center rounded-lg bg-gradient-to-br from-[#21c7b4] to-[#11a4b3] text-xs font-black leading-none text-white">+</span>
                         </span>
@@ -15,18 +15,27 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('admin.products.index')" :active="request()->routeIs('admin.products.*')">
-                        {{ __('Products') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('admin.orders.index')" :active="request()->routeIs('admin.orders.*')">
-                        {{ __('Orders') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('admin.settings.index')" :active="request()->routeIs('admin.settings.*')">
-                        {{ __('CMS') }}
-                    </x-nav-link>
+                    @if(Auth::user()->is_admin)
+                        <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
+                            {{ __('Dashboard') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('admin.products.index')" :active="request()->routeIs('admin.products.*')">
+                            {{ __('Products') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('admin.orders.index')" :active="request()->routeIs('admin.orders.*')">
+                            {{ __('Orders') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('admin.settings.index')" :active="request()->routeIs('admin.settings.*')">
+                            {{ __('CMS') }}
+                        </x-nav-link>
+                    @else
+                        <x-nav-link :href="route('shop')" :active="request()->routeIs('shop')">
+                            {{ __('Shop') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('account')" :active="request()->routeIs('account')">
+                            {{ __('My account') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -79,18 +88,27 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('admin.products.index')" :active="request()->routeIs('admin.products.*')">
-                {{ __('Products') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('admin.orders.index')" :active="request()->routeIs('admin.orders.*')">
-                {{ __('Orders') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('admin.settings.index')" :active="request()->routeIs('admin.settings.*')">
-                {{ __('CMS') }}
-            </x-responsive-nav-link>
+            @if(Auth::user()->is_admin)
+                <x-responsive-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
+                    {{ __('Dashboard') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('admin.products.index')" :active="request()->routeIs('admin.products.*')">
+                    {{ __('Products') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('admin.orders.index')" :active="request()->routeIs('admin.orders.*')">
+                    {{ __('Orders') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('admin.settings.index')" :active="request()->routeIs('admin.settings.*')">
+                    {{ __('CMS') }}
+                </x-responsive-nav-link>
+            @else
+                <x-responsive-nav-link :href="route('shop')" :active="request()->routeIs('shop')">
+                    {{ __('Shop') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('account')" :active="request()->routeIs('account')">
+                    {{ __('My account') }}
+                </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->

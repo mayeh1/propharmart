@@ -78,9 +78,14 @@
                         @endif
                     </a>
                     @auth
-                        <a href="{{ route('dashboard') }}" class="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:border-emerald-600 hover:text-emerald-700">Dashboard</a>
+                        @if(auth()->user()->is_admin)
+                            <a href="{{ route('admin.dashboard') }}" class="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:border-emerald-600 hover:text-emerald-700">Admin</a>
+                        @else
+                            <a href="{{ route('account') }}" class="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:border-emerald-600 hover:text-emerald-700">My account</a>
+                        @endif
                     @else
                         <a href="{{ route('login') }}" class="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:border-emerald-600 hover:text-emerald-700">Login</a>
+                        <a href="{{ route('register') }}" class="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:border-emerald-600 hover:text-emerald-700">Register</a>
                     @endauth
                     <a href="{{ route('shop') }}" class="rounded-full bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700">Shop now</a>
                 </div>
