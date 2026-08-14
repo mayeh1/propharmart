@@ -67,7 +67,7 @@
                     <a href="{{ route('shop') }}" class="hover:text-emerald-700">Shop</a>
                     <a href="#categories" class="hover:text-emerald-700">Categories</a>
                     <a href="#popular" class="hover:text-emerald-700">Popular</a>
-                    <a href="#contact" class="hover:text-emerald-700">Contact</a>
+                    <a href="{{ route('contact') }}" class="hover:text-emerald-700">Contact</a>
                 </nav>
 
                 <div class="flex items-center gap-3">
@@ -101,7 +101,7 @@
                 <ul class="space-y-2 text-sm text-slate-300">
                     <li><a href="{{ route('shop') }}" class="hover:text-white">Shop</a></li>
                     <li><a href="#categories" class="hover:text-white">Categories</a></li>
-                    <li><a href="#health-guides" class="hover:text-white">Health guides</a></li>
+                    <li><a href="{{ route('contact') }}" class="hover:text-white">Contact us</a></li>
                 </ul>
             </div>
             <div>

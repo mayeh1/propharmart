@@ -17,8 +17,11 @@
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <a href="/" class="flex flex-col items-center gap-3">
+                    <span class="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0b2d4d] via-[#184f7e] to-[#0b3551]">
+                        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#21c7b4] to-[#11a4b3] text-xl font-black leading-none text-white">+</span>
+                    </span>
+                    <span class="text-xl font-black tracking-tight text-slate-900">PROPHAMART</span>
                 </a>
             </div>
 

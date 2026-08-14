@@ -5,8 +5,11 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                    <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-2">
+                        <span class="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#0b2d4d] via-[#184f7e] to-[#0b3551]">
+                            <span class="flex h-5 w-5 items-center justify-center rounded-lg bg-gradient-to-br from-[#21c7b4] to-[#11a4b3] text-xs font-black leading-none text-white">+</span>
+                        </span>
+                        <span class="text-lg font-black tracking-tight text-slate-900">PROPHAMART</span>
                     </a>
                 </div>
 
