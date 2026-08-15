@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NewOrderNotification;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
+use App\Models\SiteSetting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class CheckoutController extends Controller
@@ -78,6 +81,9 @@ class CheckoutController extends Controller
         }
 
         session()->forget('cart');
+
+        $recipient = SiteSetting::where('key', 'email')->value('value') ?: config('mail.from.address');
+        Mail::to($recipient)->send(new NewOrderNotification($order->load('items')));
 
         return redirect()->route('checkout.success', $order)->with('success', 'Order placed successfully.');
     }
