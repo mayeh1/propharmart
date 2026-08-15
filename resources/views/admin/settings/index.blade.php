@@ -42,13 +42,29 @@
                     <label class="mb-2 block text-sm font-medium text-slate-700">Footer text</label>
                     <textarea name="footer_text" rows="3" class="w-full rounded-xl border border-slate-200 px-4 py-3 focus:border-emerald-500 focus:outline-none">{{ old('footer_text', $settings['footer_text'] ?? 'PROPHAMART delivers trusted health, wellness, and pharmacy essentials worldwide.') }}</textarea>
                 </div>
-                <div class="md:col-span-2">
+                <div>
                     <label class="mb-2 block text-sm font-medium text-slate-700">Shipping message</label>
                     <input type="text" name="shipping_message" value="{{ old('shipping_message', $settings['shipping_message'] ?? 'Free shipping on all orders over £60') }}" class="w-full rounded-xl border border-slate-200 px-4 py-3 focus:border-emerald-500 focus:outline-none">
                 </div>
-                <div class="md:col-span-2">
+                <div>
+                    <label class="mb-2 block text-sm font-medium text-slate-700">Dispatch message</label>
+                    <input type="text" name="dispatch_message" value="{{ old('dispatch_message', $settings['dispatch_message'] ?? 'Fast UK & EU dispatch') }}" class="w-full rounded-xl border border-slate-200 px-4 py-3 focus:border-emerald-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="mb-2 block text-sm font-medium text-slate-700">Security message</label>
+                    <input type="text" name="security_message" value="{{ old('security_message', $settings['security_message'] ?? '100% secure checkout') }}" class="w-full rounded-xl border border-slate-200 px-4 py-3 focus:border-emerald-500 focus:outline-none">
+                </div>
+                <div>
                     <label class="mb-2 block text-sm font-medium text-slate-700">Welcome message</label>
                     <input type="text" name="welcome_message" value="{{ old('welcome_message', $settings['welcome_message'] ?? 'Welcome to PROPHAMART — your wellness and pharmacy partner.') }}" class="w-full rounded-xl border border-slate-200 px-4 py-3 focus:border-emerald-500 focus:outline-none">
+                </div>
+                <div class="md:col-span-2">
+                    <label class="mb-2 block text-sm font-medium text-slate-700">"Why choose us" heading</label>
+                    <input type="text" name="why_choose_title" value="{{ old('why_choose_title', $settings['why_choose_title'] ?? 'Fast, secure and trusted pharmacy care') }}" class="w-full rounded-xl border border-slate-200 px-4 py-3 focus:border-emerald-500 focus:outline-none">
+                </div>
+                <div class="md:col-span-2">
+                    <label class="mb-2 block text-sm font-medium text-slate-700">"Why choose us" text</label>
+                    <textarea name="why_choose_text" rows="3" class="w-full rounded-xl border border-slate-200 px-4 py-3 focus:border-emerald-500 focus:outline-none">{{ old('why_choose_text', $settings['why_choose_text'] ?? 'We focus on reliable product quality, discreet shipping and a smooth shopping experience for healthcare essentials.') }}</textarea>
                 </div>
             </div>
 

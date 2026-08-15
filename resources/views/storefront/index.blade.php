@@ -58,9 +58,9 @@
 
 <div class="bg-white py-5 shadow-sm">
     <div class="mx-auto grid max-w-7xl gap-4 px-4 text-sm font-medium text-slate-700 sm:grid-cols-3 sm:px-6 lg:px-8">
-        <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center">Free delivery over £60</div>
-        <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center">Fast UK &amp; EU dispatch</div>
-        <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center">100% secure checkout</div>
+        <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center">{{ $settings['shipping_message'] ?? 'Free shipping on all orders over £60' }}</div>
+        <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center">{{ $settings['dispatch_message'] ?? 'Fast UK & EU dispatch' }}</div>
+        <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center">{{ $settings['security_message'] ?? '100% secure checkout' }}</div>
     </div>
 </div>
 
@@ -139,8 +139,8 @@
         <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
                 <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">Why choose us</p>
-                <h2 class="mt-3 text-3xl font-black tracking-tight">Fast, secure and trusted pharmacy care</h2>
-                <p class="mt-4 max-w-xl text-slate-300">We focus on reliable product quality, discreet shipping and a smooth shopping experience for healthcare essentials.</p>
+                <h2 class="mt-3 text-3xl font-black tracking-tight">{{ $settings['why_choose_title'] ?? 'Fast, secure and trusted pharmacy care' }}</h2>
+                <p class="mt-4 max-w-xl text-slate-300">{{ $settings['why_choose_text'] ?? 'We focus on reliable product quality, discreet shipping and a smooth shopping experience for healthcare essentials.' }}</p>
             </div>
             <div class="grid gap-4 sm:grid-cols-3">
                 <div class="rounded-2xl border border-slate-700 bg-slate-800 p-4 text-center"><div class="text-2xl font-black text-emerald-300">24h</div><div class="mt-2 text-sm text-slate-300">Dispatch</div></div>

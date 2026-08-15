@@ -42,8 +42,8 @@
             <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 text-[11px] font-medium sm:px-6 lg:px-8">
                 <div class="flex items-center gap-6">
                     <span>{{ $settings['shipping_message'] ?? 'Free shipping on all orders over £60' }}</span>
-                    <span>Worldwide shipping</span>
-                    <span>Secure checkout</span>
+                    <span>{{ $settings['dispatch_message'] ?? 'Fast UK & EU dispatch' }}</span>
+                    <span>{{ $settings['security_message'] ?? '100% secure checkout' }}</span>
                 </div>
                 <div class="hidden items-center gap-5 md:flex">
                     <span>{{ $settings['email'] ?? 'info@propharmat.com' }}</span>

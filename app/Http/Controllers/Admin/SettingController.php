@@ -28,6 +28,10 @@ class SettingController extends Controller
             'footer_text',
             'shipping_message',
             'welcome_message',
+            'dispatch_message',
+            'security_message',
+            'why_choose_title',
+            'why_choose_text',
         ];
 
         foreach ($groups as $key) {
