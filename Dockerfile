@@ -21,14 +21,13 @@ COPY . .
 COPY --from=assets /app/public/build ./public/build
 
 RUN composer install --no-dev --optimize-autoloader --no-interaction \
-    && mkdir -p database \
+    && mkdir -p database public/storage/products \
     && touch database/database.sqlite \
-    && chmod -R 775 storage bootstrap/cache database
+    && chmod -R 775 storage bootstrap/cache database public/storage
 
 EXPOSE 10000
 
-CMD php artisan storage:link \
-    && php artisan migrate --force \
+CMD php artisan migrate --force \
     && php artisan db:seed --force \
     && php artisan config:cache \
     && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
