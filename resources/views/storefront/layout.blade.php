@@ -41,13 +41,13 @@
         <div class="glass-strip text-white">
             <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 text-[11px] font-medium sm:px-6 lg:px-8">
                 <div class="flex items-center gap-6">
-                    <span>Free delivery over £60</span>
+                    <span>{{ $settings['shipping_message'] ?? 'Free shipping on all orders over £60' }}</span>
                     <span>Worldwide shipping</span>
                     <span>Secure checkout</span>
                 </div>
                 <div class="hidden items-center gap-5 md:flex">
-                    <span>info@propharmat.com</span>
-                    <span>+44 20 5555 0142</span>
+                    <span>{{ $settings['email'] ?? 'info@propharmat.com' }}</span>
+                    <span>{{ $settings['phone'] ?? '+44 20 5555 0142' }}</span>
                 </div>
             </div>
         </div>
